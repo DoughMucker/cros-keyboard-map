@@ -75,7 +75,8 @@ def create_keyd_config(physmap):
         config += f"{vivaldi_scancode_to_keyd(scancode)} = {mapping}\n"
 
     # map lock button to coffee
-    config += "\nf13=coffee\nsleep=coffee\n"
+#removed and replaced with delete. look at replacing with context menu instead    config += "\nf13=coffee\nsleep=coffee\n" 
+    config += """f13 = delete"""
 
     # make fn keys act like fn keys when super is held
     i = 0
@@ -91,8 +92,10 @@ def create_keyd_config(physmap):
         i += 1
         config += f"{vivaldi_scancode_to_keyd(scancode)} = f{i}\n"
 
-    # Add various extra shortcuts
+    # Add various extra shortcuts  #added pageup and pagedown with alt-up and alt-down
     config += """\n[alt]
+up = pageup
+down = pagedown
 backspace = delete
 brightnessdown = kbdillumdown
 brightnessup = kbdillumup
